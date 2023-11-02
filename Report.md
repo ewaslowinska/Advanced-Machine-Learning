@@ -1,5 +1,7 @@
 ## Report on the respective parts of the assignment
 
+Inm this assigmnment I completed parts 1, 2 and half of part 3. I didn't complete the whole assignment because I wasn't able to wodnload the whole 'train 2017' dataset and subsequently the CNN model from Asad's demo did not want to work, even after some alterations
+
 ### Part 1
 
 This part was quite straightforward. I followed the HuggingFace tutorial and managed to run the code smoothly, occasionally running into CUDA: out of memory error
