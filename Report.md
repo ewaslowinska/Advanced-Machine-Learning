@@ -1,20 +1,7 @@
-## Report on the respective parts of the assignment
+## Project report
 
-In this assigmnment, I completed parts 1, 2 and half of part 3. I didn't complete the whole assignment because I wasn't able to download the whole 'train 2017' dataset and subsequently the CNN model from Asad's demo did not want to work, even after some alterations
+The aim of this project was to create a machine learning model that would perform score classification and sentiment analysis of Korean drama reviews. There are 4 files, each of which corresponds to one of the 4 experiments planned in this project. In the first experiment, the model performs a multiclass score classification with 19 classes, which are scores ranging from 1 to 10 with half-point increments. In the second experiment, a multiclass score classification is performed with 10 classes as the original "full" scores were merged with their "half" counterparts (e.g. 1 with 1.5). In the third experiment, a sentiment analysis is taking place, where scores from 1 to 5.5 are classified as negative and from 6 to 10 as positive. A weight tensor is created to account for the class imbalance. In the fourth experiment, the same sentiment analysis is performed but with undersampling applied to counter the class imbalance.
 
-### Part 1
+### Running the code files
 
-This part was quite straightforward. I followed the HuggingFace tutorial and managed to run the code smoothly, occasionally running into CUDA: out of memory error
-
-### Part 2
-
-This part's biggest challenge was to actually download the dataset as it is very big. I didn't upload the dataset to GitHub precisely because of its size. After a lot of struggles, I managed to download the dataset to my computer, but I didn't manage to upload all of its files to MLT GPU server. I had to add
-
-`def clean_data(meta, datadir="train2017"):`<br>
-&ensp;`return [x for x in meta if os.path.isfile("{}/{}".format(datadir, x['file_name']))]`
-
-to the code, so that the machine doesn't try to access nonexistent files. The model worked quite well, guessing the example image right with 68% confidence
-
-### Part 3
-
-For this part, I chose to include dogs as the third class. With this additional class, the machine's performance dropped a bit, but it still managed to guess the class of an example image right with 35% confidence
+You might need to install torch and torchtext to your mltgpu server in order to run the code. Next, make sure that the 'reviews.csv' file is in the same directory as your code file. Then feel free to run the code all at once. You might get a "cuDNN version incompatibility" error when running the training block, but after running it again, the error should disappear
